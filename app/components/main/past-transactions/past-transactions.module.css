@@ -1,0 +1,33 @@
+.pastTransactions{
+    padding: 96px 178px;
+    background-color: var(--primary);
+}
+
+.title{
+    color: var(--white);
+    font-weight: 700;
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    padding-bottom: 4px;
+}
+
+.supTitle{
+    color: var(--green);
+    font-weight: 400;
+    letter-spacing: -1px;
+    position: relative;
+    margin-left: 11px;
+    display: block;
+}
+
+.supTitle::after{
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: calc(50% - 3.5px);
+    left: -13.5px;
+    background-color: var(--green);
+    border-radius: 50%;
+}

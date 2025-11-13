@@ -1,0 +1,46 @@
+
+
+.header{
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    max-height: 68px;
+    height: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation{
+    max-width: 693px;
+    width: 100%;
+}
+
+.containerNav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.containerAuth{
+    display: flex;
+    gap:12px
+}
+
+.btnLogIn{
+    border-width: 1.5px;
+    color: var(--action-primary);
+    background-color: rgba(var(--action-primary-rgb), 0.2);
+}
+
+.btnsAuth{
+    font-size: 14px;
+}
+
+.navLinks{
+    color: rgba(var(--white-rgb), .7);
+    text-transform: uppercase;
+}

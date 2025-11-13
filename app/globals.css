@@ -1,0 +1,174 @@
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+} */
+:root {
+  --primary: #030718;
+  --secondary: #6A54FF;
+
+  --white: #ffffff;
+  --black: #000000;
+  --green: #35FF9E;
+
+  --desactive-white: #E7F7F8;
+  --action-primary: #57E1FF;
+  --input-primary: #4A3BB3;
+  --input-secondary: #201A4F;
+
+  --action-primary-rgb: 87, 225, 255;
+  --white-rgb: 255, 255, 255;
+  --black-rgb: 0, 0, 0;
+  --secondary-rgb:106, 84, 255;
+  --primary-rgb:3, 7, 24, 1;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-ibm-plex-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.container{
+  max-width: 1300px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.primary-btn{
+  padding: 11px 24px;
+  background-color: var(--action-primary);
+  color: var(--primary);
+  font-size: 16px;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 4px 0px var(--action-primary);
+  border-radius: 3px;
+  border: 1px solid var(--action-primary);
+  font-weight: 500;
+}
