@@ -1,6 +1,8 @@
 .pastTransactions{
-    padding: 96px 178px;
+    padding: 96px 0 178px;
     background-color: var(--primary);
+    display: flex;
+    justify-content: center;
 }
 
 .title{
@@ -30,4 +32,135 @@
     left: -13.5px;
     background-color: var(--green);
     border-radius: 50%;
+}
+
+
+.swiperContainer {
+    overflow-x: visible;
+    overflow-y: visible;
+    position: relative;
+    padding-left: 0;
+    margin-top: 72px;
+}
+
+
+.slideContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+.slideContainer::after{
+    content: '';
+    background: url('/images/card-bg.svg') 18% / 70% no-repeat;
+    /* background-size: cover; */
+    top: -8px;
+    right: -20%;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+}
+
+.slideTitle{
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    font-weight: 500;
+}
+
+.slideSupTitle{
+    color: rgba(var(--white-rgb), .4);
+}
+
+.type{
+    position: relative;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.type::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: var(--white);
+    opacity: .4;
+    right: -5.5px;
+    top:calc(50% - 1px);
+}
+
+.time{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.profit{
+    text-transform: uppercase;
+    opacity: .7;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.percent{
+    font-size: 28px;
+    text-transform: uppercase;
+
+    /* The font was loaded as “virtual” via Next.js and 
+    Google Fonts API, so it is possible that the slashed-zero 
+    option is not enabled (or disabled by the builder). */
+
+    font-variant-numeric: slashed-zero;
+    color: var(--green);
+    position: relative;
+    width: fit-content;
+    margin-bottom: 9px;
+}
+
+.percent::before{
+    content: '';
+    position: absolute;
+    background: url('/images/percent-arrow.svg') 100% / 100% no-repeat;
+    /* background-size: cover; */
+    top: calc(50% - 11px);
+    right: -15px;
+    width: 10px;
+    height: 19px;
+}
+
+.goalDate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goal{
+    opacity: .7;
+    font-size: 14;
+}
+
+
+.date{
+    font-size: 14px;
+    font-weight: 400;
+    opacity: .4;
+    font-weight: 400;
+}
+
+
+
+@media (max-width: 950px) {
+    .pastTransactions{
+        padding: 48px 0 63px;
+    }
+
+    .title{
+        font-size: 28px;
+    }
+    .swiperContainer{
+        margin-top: 24px;
+    }
 }

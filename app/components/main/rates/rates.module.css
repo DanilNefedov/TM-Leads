@@ -27,6 +27,9 @@
     max-width: 413px;
     width: 100%;
     margin-bottom: 44px;
+    position: relative;
+    gap: 0;
+
 }
 
 .tab {
@@ -35,6 +38,16 @@
     color: var(--action-primary);
     width: 50%;
     text-align: center;
+
+
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: color 0.3s ease;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    flex: 1;
 }
 
 .tabsContainer {
@@ -43,7 +56,7 @@
     height: 100%;
     width: 100%;
     align-items: stretch;
-    gap:15px;
+    gap: 15px;
 }
 
 .contentContainer {
@@ -57,6 +70,35 @@
     flex-direction: column;
     display: flex;
     justify-content: space-between;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contentContainer:hover,
+.contentContainer:active,
+.contentContainer:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(136, 153, 255, 0.3);
+}
+
+
+
+.activeTab {
+    color: var(--black);
+    font-weight: 600;
+}
+
+.tabIndicator {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background-color: var(--action-primary);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    z-index: 1;
 }
 
 .tabTitle {
@@ -170,6 +212,7 @@
     border-radius: 3px;
 }
 
+
 .btnTitle {
     font-size: 16px;
     text-transform: uppercase;
@@ -182,4 +225,56 @@
     font-size: 12px;
     color: rgba(var(--primary-rgb), .56);
     font-weight: 400;
+}
+
+.active {
+    background-color: var(--secondary);
+}
+
+
+
+@media (max-width: 950px) {
+
+    .rates {
+        padding: 181px 0 45px;
+    }
+
+    .title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tabsHeader {
+        margin-bottom: 24px;
+    }
+
+    .contentContainer {
+        padding: 16px;
+    }
+
+    .tabsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabTitle {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 24px;
+    }
+
+    .listItem::before {
+
+        width: calc(100% + 53px);
+        left: -38px;
+    }
+
+    .btn {
+        padding: 8px;
+    }
 }

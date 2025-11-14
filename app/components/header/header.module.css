@@ -1,20 +1,19 @@
-
-
-.header{
+.header {
     background-color: var(--primary);
     display: flex;
     justify-content: center;
     max-height: 68px;
     height: 100%;
+
 }
 
-.container{
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navigation{
+.navigation {
     max-width: 693px;
     width: 100%;
 }
@@ -23,24 +22,146 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    gap: 2%;
 }
 
-.containerAuth{
+.containerAuth {
     display: flex;
-    gap:12px
+    gap: 12px
 }
 
-.btnLogIn{
+.btnLogIn {
     border-width: 1.5px;
     color: var(--action-primary);
     background-color: rgba(var(--action-primary-rgb), 0.2);
 }
 
-.btnsAuth{
+.btnsAuth {
     font-size: 14px;
 }
 
-.navLinks{
+.navLinks {
     color: rgba(var(--white-rgb), .7);
     text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .navLinks {
+        transition: all 0.3s ease;
+    }
+    
+    .navLinks:hover {
+        color: rgba(var(--white-rgb), 1);
+        transform: translateY(-3px);
+    }
+}
+
+@media (hover: none) {
+    .navLinks:active {
+        color: rgba(var(--white-rgb), 1);
+    }
+}
+
+.containerMenu {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.menuSpan {
+    display: block;
+    width: 32px;
+    height: 2px;
+    background-color: #E7F7F8;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.burgerBtn {
+    background-color: transparent;
+    position: relative;
+    width: 32px;
+    height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.burgerBtn.open .menuSpan:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.burgerBtn.open .menuSpan:nth-child(2) {
+    opacity: 0;
+}
+
+.burgerBtn.open .menuSpan:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
+
+.mobileNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: var(--secondary);
+    z-index: 999;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+
+@media (max-width: 1050px) {
+    .containerNav {
+        flex-direction: column;
+        justify-content: start;
+        margin: 60px 0 131px;
+        height: 100dvh;
+    }
+
+    .containerMenu{
+        display: none;
+    }
+
+    .navLinks {
+        font-size: 24px;
+
+    }
+
+    .containerNav {
+        gap: 32px;
+    }
+
+    .containerAuth {
+        width: 100%;
+        display: flex;
+        gap: 16px;
+    }
+
+    .btnLogIn {
+        order: 2;
+        width: 50%;
+        text-align: center;
+    }
+
+    .btnsAuth:not(.btnLogIn) {
+        order: 1;
+        width: 50%;
+        text-align: center;
+    }
 }

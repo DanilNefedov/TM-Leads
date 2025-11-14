@@ -31,7 +31,6 @@
 
 .summary{
     font-size: 24px;
-    letter-spacing: -2px;
     color: var(--primary);
     cursor: pointer;
     list-style: none; 
@@ -67,4 +66,16 @@ summary::-moz-list-bullet {
 
 .accordion[open] .summary svg path{
     stroke: var(--white);
+}
+
+@media (max-width: 950px) {
+
+    .questions{
+        padding: 56px 54px;
+    }
+
+    .title{
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
 }

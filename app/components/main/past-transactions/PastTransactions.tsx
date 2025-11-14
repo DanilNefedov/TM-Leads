@@ -1,4 +1,5 @@
 import styles from './past-transactions.module.css'
+import { SwiperBlock } from './SwiperBlock'
 
 
 
@@ -13,7 +14,9 @@ export function PastTransactions(){
                     <span className={styles.supTitle}>Онлайн</span>
                 </div>
 
-                <div className="swiper"></div>
+                <div className={styles.swiperContainer}>
+                    <SwiperBlock></SwiperBlock>
+                </div>
 
 
             </div>

@@ -1,9 +1,14 @@
+'use client'
+
+import { useState } from 'react';
+import { Cards } from './Cards'
 import styles from './rates.module.css'
 
 
 
 
 export function Rates() {
+    const [activeTab, setActiveTab] = useState<"spot" | "futures">("spot");
 
 
     return (
@@ -12,76 +17,28 @@ export function Rates() {
                 <h2 className={styles.title}>тарифы</h2>
 
                 {/* <div className="tabs"> */}
-                    <div className={styles.tabsHeader}>
-                        <div className={styles.tab}>СПОТ</div>
-                        <div className={styles.tab}>фьючерс</div>
-                    </div>
+                <div className={styles.tabsHeader}>
 
-                    <div className={styles.tabsContainer}>
-                        <div className={styles.contentContainer}>
-                            <div className={styles.sectionTop}>
-                                <h3 className={styles.tabTitle}>STANDART</h3>
-                                <ul className={styles.list}>
-                                    <li className={styles.listItem}>Ручной трейдинг</li>
-                                    <li className={styles.listItem}>Автоматическое или полуавтоматическое копирование сделок</li>
-                                    <li className={styles.listItem}>Личный кабинет со статистикой</li>
-                                    <li className={styles.listItem}>Среднесрочные сделки с уровнями набора портфеля</li>
-                                </ul>
-                            </div>
-                            <div className={styles.sectionBot}>
-                                <div className={styles.datePrice}>
-                                    <div className={styles.price}>$234 <span className={styles.discount}>-35%</span></div>
-                                    <div className={styles.date}>
-                                        <select className={styles.select}>
-                                            <option className={styles.option}>12 месяцев</option>
-                                            <option className={styles.option}>12 месяцев</option>
-                                            <option className={styles.option}>12 месяцев</option>
-                                        </select>
-                                    </div>
-                                </div>
+                    <div
+                        className={styles.tabIndicator}
+                        style={{
+                            transform: activeTab === "spot" ? "translateX(0%)" : "translateX(100%)"
+                        }}
+                    />
+                    <div
+                        className={`${styles.tab} ${activeTab === "spot" ? styles.activeTab : ""}`}
+                        onClick={() => setActiveTab("spot")}
+                    >СПОТ</div>
+                    <div
+                        className={`${styles.tab} ${activeTab === "futures" ? styles.activeTab : ""}`}
+                        onClick={() => setActiveTab("futures")}
+                    >фьючерс</div>
+                </div>
 
-                                <button className={styles.btn}>
-                                    <span className={styles.btnTitle}>Попробовать</span>
-                                    <span className={styles.btnSupTitle}>5 дней бесплатно</span>
-                                </button>
-                            </div>
-
-
-                        </div>
-
-                        <div className={styles.contentContainer}>
-                            <div className={styles.sectionTop}>
-                                <h3 className={styles.tabTitle}>VIP</h3>
-                                <ul className={styles.list}>
-                                    <li className={styles.listItem}>Ручной трейдинг</li>
-                                    <li className={styles.listItem}>Автоматическое или полуавтоматическое копирование сделок</li>
-                                    <li className={styles.listItem}>Личный кабинет со статистикой</li>
-                                    <li className={styles.listItem}>Краткосрочные, среднесрочные и инвест сделки</li>
-                                    <li className={styles.listItem}>Доступ в Vip чат с командой</li>
-                                    <li className={styles.listItem}>Наш авторский курс по трейдингу</li>
-                                </ul>
-                            </div>
-
-                            <div className={styles.sectionBot}>
-                                <div className={styles.datePrice}>
-                                    <div className={styles.price}>$585 <span className={styles.discount}>-35%</span></div>
-                                    <div className={styles.date}>
-                                        <select className={styles.select}>
-                                            <option className={styles.option}>12 месяцев</option>
-                                            <option className={styles.option}>12 месяцев</option>
-                                            <option className={styles.option}>12 месяцев</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <button className={styles.btn}>
-                                    <span className={styles.btnTitle}>Попробовать</span>
-                                    <span className={styles.btnSupTitle}>5 дней бесплатно</span>
-                                </button>
-                            </div>
-
-                        </div>
-                    </div>
+                <div className={styles.tabsContainer}>
+                    {activeTab === "spot" && <Cards type={activeTab} />}
+                    {activeTab === "futures" && <Cards type={activeTab} />}
+                </div>
                 {/* </div> */}
             </div>
         </section>

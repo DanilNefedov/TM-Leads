@@ -11,7 +11,7 @@ export function NavigationItems(props: Props){
     const { label } = props
 
     return(
-        <li className="navigation-item">
+        <li>
             <a href="#" className={styles.navLinks}>{label}</a>
         </li>
     )
